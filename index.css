@@ -1,0 +1,1374 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E6E6EA;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px;
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #6725A8;
+}
+
+.header {
+    width: 100%;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    padding: 16px 3px 16px 24px;
+    gap: 32px;
+}
+
+.header .header_nav {
+    display: flex;
+    gap: 16px;
+    width: 170px;
+    height: 56px;
+    align-items: center;
+}
+
+.header_nav_button {
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 8px;
+    padding: 12px 10px;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.header_nav_button:hover {
+    border: 1px solid #FFF;
+}
+
+.header_nav_p{
+    width: 106px;
+    height: 56px;
+    color: #FFF;
+    padding: 1px 0px 7px 0px;
+    font-size: 28px;
+    line-height: 24px;
+    font-family: 'SegoeUI-SemiBold';
+    font-variant: all-small-caps;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+}
+
+.header_input {
+    display: flex;
+    flex: 1 1;
+    height: 48px;
+    border-radius: 36px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.20);
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+
+.header_input:hover {
+    background-color: rgba(191, 117, 250, 0.5)
+}
+
+.header_input_box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1;
+}
+
+.header_input_button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.header_input_input {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 4px;
+    flex: 1 1;
+    cursor: pointer;
+}
+
+.header_input_input::placeholder {
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+.header .header_icons {
+    display: flex;
+    gap: 40px;
+    height: 56px;
+    padding-right: 17px;
+    cursor: pointer;
+}
+
+
+.header_profile_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+    width: 56px;
+    height: 100%;
+    gap: 6px;
+
+}
+
+.header_profile_icon span:hover {
+    color: #d6aefb;
+}
+
+.header_profile_icon a {
+    height: 30px;
+}
+
+.header_profile_icon  span {
+    color: #FFF;
+    font-family: 'Segoe-UI-400';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.header_profile_icon a img {
+    padding: 1px 15px 1px 13px;
+}
+
+.header_basket_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+    width: 56px;
+    height: 100%;
+    gap: 6px;
+}
+
+.header_basket_icon span:hover {
+    color: #d6aefb;
+}
+
+.header_basket_icon a {
+    height: 30px;
+    position: relative;
+}
+
+.header_basket_icon span {
+    color: #FFF;
+    font-family: 'Segoe-UI-400';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.header_basket_icon a img {
+    padding: 1px 18px 1px 10px;
+}
+
+.header_basket_icon a div {
+    display: inline-flex;
+    height: 16px;
+    min-width: 16px;
+    padding: 0px 2px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background:  #F55123;
+    position: absolute;
+    text-align: center;
+    top: -4px;
+    bottom: 17.99px;
+    left: 31.96px;
+}
+
+.header_basket_icon_num {
+    font-family: 'SegoeUI-Bold';
+    font-size: 10px;
+    line-height: 18px;
+    color: #fff;
+}
+
+.main {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1;
+    background-color: #F6F6FA;
+    border-radius: 24px;
+    padding: 34px 24px 30px 24px;
+    gap: 32px;
+
+}
+
+.main_container {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+
+.main_p h1 {
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.28px;
+}
+
+.main_basket {
+    display: flex;
+    max-width: 891px;
+    min-width: 640px;
+    width: 64vw;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.main_basket_insale {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.main_checkbox_all {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    align-self: stretch;
+    justify-content: space-between;
+}
+
+.main_checkbox_label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    flex: 1;
+}
+ .main_label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+.main_checkbox_label_input {
+    cursor: pointer;
+}
+
+.main_label_input {
+    display: none;
+    cursor: pointer;
+}
+
+.main_checkbox_label_decor {
+    display: none;
+    background-image: url(Assets/checkbox.svg);
+    width: 22px;
+    height: 22px;
+    contain: content;
+    background-repeat: no-repeat;
+}
+
+.main_label_decor {
+    display: none;
+    background-image: url(Assets/checkbox.svg);
+    width: 22px;
+    height: 22px;
+    contain: content;
+    background-repeat: no-repeat;
+}
+
+.main_empty {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border: 1px solid #d3d4dd;
+    border-radius: 6px;
+}
+
+.main_checkbox_empty {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border: 1px solid #d3d4dd;
+    border-radius: 6px;
+}
+
+.main_checkbox_label_text {
+    height: 24px;
+    padding-bottom: 5px;
+    align-items: center;
+    flex-grow: 1;
+    font-family: 'SegoeUI-Regular', serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000;
+    font-size: 16px;
+}
+
+.main_checkbox_button {
+    border: none;
+    background: transparent;
+    width: 20px;
+    height: 20px;
+}
+.main_checkbox_label_input:checked ~ .main_checkbox_label_decor {
+    display: block;
+}
+
+.main_checkbox_label_input:checked ~ .main_checkbox_empty {
+    display: none;
+}
+
+.main_label_input:checked ~ .main_label_decor {
+    display: block;
+}
+
+.main_label_input:checked ~ .main_empty {
+    display: none;
+}
+
+.main_checkbox_label_input {
+    display: none;
+}
+
+.main_products {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+    border-top: 1px solid black;
+}
+
+.main_product {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.main_product_inf {
+    display: flex;
+    width: 397px;
+    padding-top: 12px;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.main_product_checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.main_img {
+    width: 72px;
+    height: 96px;
+    border-radius: 8px;
+}
+
+.middle_img {
+    width: 40px;
+    height: 56px;
+    border-radius: 8px;
+}
+
+.product_description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.product_description_name {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.product_description_info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.product_description_sklad_flex {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+    align-self: stretch;
+
+}
+
+.product_description_sklad {
+    display: flex;
+    height: 16px;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+    color:  #9797AF;
+    font-family: 'SegoeUI-Regular', serif;;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.main_product_sum {
+    display: flex;
+    width: 226px;
+    padding-top: 9px;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.main_product_count {
+    display: flex;
+    padding-top: 3px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.amount_product {
+    display: flex;
+    width: 100px;
+    height: 44px;
+    border-radius: 8px;
+    background:  #FFF;
+    align-items: center;
+    justify-content: center;
+}
+
+.amount_product button {
+    display: flex;
+    width: 24px;
+    height: 32px;
+    padding: 2px 7px 6px 8px;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+}
+
+.button_plus {
+    color: rgba(0, 0, 0, 0.20);
+}
+
+.button_minus {
+    color: #000;
+}
+.amount_product span {
+    display: flex;
+    width: 44px;
+    height: 23px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color:  #000;
+    text-align: center;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.main_product_count p {
+    width: 100px;
+    color:  #FF3B30;
+    font-family: 'SegoeUI-Regular', serif;;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.like_delete_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background: transparent;
+}
+
+
+.like_delete_button  button {
+    background: transparent;
+}
+
+.main_product_price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+
+.price_after_com {
+    display: flex;
+    align-items: baseline;
+}
+
+.price_after_com h3 {
+    color: #000;
+    text-align: right;
+    font-family: 'SegoeUI-Bold';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 140% */
+    letter-spacing: -0.2px;
+}
+
+.price_after_com h4 {
+    color: #000;
+    text-align: right;
+    font-family: 'SegoeUI-Bold';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.old_price {
+    color: #9797AF;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    padding-bottom: 1px;
+    border-bottom: 1px dashed;
+    position: relative;
+}
+
+.old_price img {
+    width: 100%;
+    position: absolute;
+    top: 51%;
+}
+
+.price_before_com {
+    height: 0px;
+    align-self: stretch;
+    stroke-width: 1px;
+    stroke: rgba(0, 0, 0, 0.20);
+}
+
+.main_basket_missing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.aa {
+    filter: grayscale(100%)
+}
+.main_missing_title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    align-self: stretch;
+    justify-content: space-between;
+}
+
+.main_missing_title h3 {
+    color:  #000;
+    font-family: 'SegoeUI-SemiBold';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+}
+
+
+.main_basket_user_data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.main_delivery {
+    display: flex;
+    padding: 16px 24px 24px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: #FFF;
+}
+
+.main_delivery_block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.title-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    cursor: pointer;
+}
+
+.title-btn h2 {
+    flex: 1 0 0;
+    color:  #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+}
+
+.title-btn button {
+    text-align: right;
+    font-family: 'SegoeUI-Bold';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    background: transparent;
+    display: flex;
+    padding-top: 7px;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    color: #CB11AB;
+}
+
+.main_delivery_inf {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.block_inf {
+    align-items: flex-start;
+    display: flex;
+}
+
+.block_block_inf {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.p_inf {
+    display: inline-block;
+    color: #000;
+    font-family: 'SegoeUI-SemiBold', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    min-width: 177px;
+}
+
+.block_block_inf:nth-child(1){
+    margin-bottom: 16px;
+}
+
+.data_inf {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.delivery_city {
+    display: flex;
+    width: 398px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.rating {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    width: 177px;
+}
+
+.ul_img {
+    display: flex;
+    align-items: flex-start;
+    list-style-type: none;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ul_img li {
+    position: relative;
+    height: 56px;
+}
+
+.ul_img li div {
+    display: flex;
+    height: 16px;
+    min-width: 16px;
+    padding: 2px 4px 3px 4px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: #F55123;
+    position: absolute;
+    text-align: center;
+    right: -3.083px;
+    top: -8px;
+}
+
+
+.header_basket_icon_num2 {
+    color: #FFF;
+    font-family: 'SegoeUI-SemiBold', serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.footer_delivery_block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    height: auto;
+}
+
+.footer_delivery_block p {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.free_delivery {
+    color: #0CB477;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.20);
+    margin-left: -4px;
+}
+
+.main_user_data_payment {
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.main_user_data_payment p {
+    color: #9797AF;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: -8px;
+}
+
+.data_payment {
+    display: flex;
+    gap: 8px;
+}
+
+.data_payment  img{
+    border-radius: 4px;
+    background:  #F6F6FA;
+}
+
+.data_payment span {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.data_payment_date {
+    margin-left: 4px;
+}
+
+.main_user_data_recipient {
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.main_user_data_recipient_inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 700px;
+    width: 100%;
+}
+
+.name_sername, .mail_num_inn {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.name_sername div, .mail_num_inn div {
+    display: flex;
+    height: 64px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    flex: 1 0 0;
+}
+
+.name_sername div input::placeholder, .mail_num_inn div input::placeholder {
+    color:  #9797AF;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    height: 24px;
+}
+
+.name_sername div input, .mail_num_inn div input {
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color:  #000;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    height: 24px;
+}
+
+.name_sername div label, .mail_num_inn div label {
+    color: #9797AF;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    height: 16px;
+}
+
+.name_sername  div .input_err , .mail_num_inn div .input_err {
+    color:  #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    align-self: stretch;
+    height: 16px;
+}
+
+
+.main_sidebar {
+    max-width: 429px;
+    min-width: 303px;
+    width: 28.4vw;
+    position: relative;
+    height: 100%;
+}
+
+.main_sidebar_total {
+    margin-top: -10px;
+    padding: 16px 24px 24px 24px;
+    border-radius: 16px;
+    background:  #FFF;
+    width: 100%;
+    position: sticky;
+    top: 10px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.main_sidebar_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.main_sidebar_total_score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.main_sidebar_total_score_all {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    align-items: flex-end;
+}
+
+.main_sidebar_total_score_all div {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.main_sidebar_total_score_all h2 {
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+}
+
+.com_big {
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+}
+
+
+.main_sidebar_total_score_sale {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.main_sidebar_total_score_sale div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.main_sidebar_total_score_sale div span{
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.main_sidebar_total_delivery {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.place_date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.title_btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.span_h4 {
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.span_h4_button_pencil {
+    background-color: transparent;
+}
+
+.text_good_info {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.delivery_date_button {
+   color: #CB11AB;
+    border-bottom: 1px dashed rgba(203, 17, 171, 0.20);
+}
+
+.reverse_delivery {
+    border-radius: 8px;
+    background: #F6F6FA;
+    display: flex;
+    padding: 8px 8px 12px 8px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.delivery_free_button {
+    color: #0CB477;
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.20);
+
+}
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    width: 300px; /* Ширина подсказки */
+    left: 0; top: 0; /* Положение подсказки */
+    background: #3989c9; /* Синий цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 0.5em; /* Поля вокруг текста */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+    pointer-events: none; /* Подсказка */
+    opacity: 0; /* Подсказка невидима */
+    transition: 1s; /* Время появления подсказки */
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+
+}
+
+.main_sidebar_total_card_pay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+    gap-top: 10px;
+}
+
+.payment_immediately {
+    display: flex;
+    padding: 8px 8px 12px 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    background: #F6F6FA;
+}
+
+.main_sidebar_total_button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.main_sidebar_total_button_order {
+    display: flex;
+    height: 44px;
+    padding: 0px 32px 5px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+}
+
+.main_sidebar_total_button_order {
+    display: flex;
+    height: 44px;
+    padding: 0px 32px 5px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 8px;
+    background: #CB11AB;
+}
+
+.author_prava {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.author_prava a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+
+}
+
+.footer {
+    background-color: #481173;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 24px 24px 24px;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    display: block;
+    background: #F6F6FA;
+    border-radius: 0 0 24px 24px;
+    width: 100%;
+    height: 43px;
+    position: absolute;
+    top: -21px;
+    left: 0;
+}
+
+ .footer_element {
+    color: rgba(255, 255, 255, 0.70);
+    text-align: center;
+    font-family: 'Segoe-UI-400', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+ .fixed_tab {
+     display: none;
+     width: 100%;
+     background: #FFF;
+     padding: 0 13px;
+     z-index: 100;
+     box-shadow: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.30);
+     backdrop-filter: blur(2.5px);
+ }
+
+.tabbar {
+    display: flex;
+    height: 56px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.header_nav_img2 {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.header_nav_p_mobile {
+    color:  #FFF;
+    font-family: 'SegoeUI-SemiBold';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 92.308% */
+    font-variant: all-small-caps;
+    letter-spacing: 0.52px;
+}
+
+.header_input_button_mobile {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.header_nav_mobile {
+    gap: 16px;
+    width: 170px;
+    height: 56px;
+    align-items: center;
+    display: none;
+}
+
+@font-face {
+    font-family: 'Segoe-UI-400';
+    src: url("Fonts/SegoeUI.ttf");
+}
+@font-face {
+    font-family: 'SegoeUI-SemiBold';
+    src:  url('Fonts/SegoeUI-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'SegoeUI-Regular';
+    src:  url('Fonts/SegoeUI-Regular.ttf');
+}
+@font-face {
+    font-family: 'SegoeUI-Bold';
+    src:  url('Fonts/SegoeUI-Bold.ttf');
+}
+
+@media (min-width: 1023px) and  (max-width: 1064px)  {
+    .main_basket {
+        width: 62vw;
+
+    }
+}
+@media   (max-width: 1022px)  {
+    .main {
+        flex-direction: column
+    }
+    .main_basket, .main_sidebar {
+        width: 100vw;
+        max-width: 100%;
+    }
+    .main_container {
+        width: 100%;
+    }
+}
+
+@media  (max-width: 978px)  {
+    .container {
+        max-width: 978px;
+        min-width: 706px;
+    }
+    .main_basket, .main_sidebar {
+        max-width: 930px;
+        min-width: 677px;
+        width: 100%;
+    }
+}
+@media (max-width: 380px)  {
+
+    .container {
+        display: inline-flex;
+        max-width: 320px;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .main {
+        padding: 25px 16px 24px 16px;
+        gap: 32px;
+    }
+
+    .fixed_tab {
+        display: block;
+    }
+
+
+    .header_nav_img2 {
+        display: block;
+    }
+
+    .header {
+        display: flex;
+        height: 56px;
+        padding: 0px 13px;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+    }
+
+    .header_nav_mobile {
+        display: flex;
+    }
+
+    .header .header_nav {
+        display: none;
+    }
+
+
+    .header .header_icons {
+        display: none;
+    }
+
+    .header_input {
+        display: none;
+    }
+
+
+
+}
+
+
+
+
+
+
