@@ -41,7 +41,7 @@ body {
 .header_nav_button {
     border: 1px solid rgba(255,255,255,0.45);
     border-radius: 8px;
-    padding: 12px 10px;
+    padding-top: 4px;
     width: 48px;
     height: 48px;
     background-color: transparent;
@@ -56,11 +56,11 @@ body {
     height: 56px;
     color: #FFF;
     padding: 1px 0px 7px 0px;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 24px;
     font-family: 'SegoeUI-SemiBold';
     font-variant: all-small-caps;
-    letter-spacing: 1.1px;
+    letter-spacing: 1.3px;
     cursor: pointer;
 }
 
@@ -211,6 +211,20 @@ body {
     color: #fff;
 }
 
+.case_over_200 {
+    display: none;
+}
+
+.toggle_case_16 {
+    display: inline-block;
+   }
+.a{
+    display: none;
+}
+.b{
+    display: none;
+}
+
 .main {
     display: flex;
     align-items: flex-start;
@@ -230,13 +244,22 @@ body {
     flex: 1 0 0;
 }
 
+.main_p h2 {
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 140% */
+    letter-spacing: -0.2px;
+}
 .main_p h1 {
     color: #000;
     font-family: 'SegoeUI-Bold';
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 36px; /* 128.571% */
     letter-spacing: -0.28px;
 }
 
@@ -254,8 +277,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 9px;
     align-self: stretch;
+    position: relative;
 }
 
 .main_checkbox_all {
@@ -264,6 +288,14 @@ body {
     gap: 11px;
     align-self: stretch;
     justify-content: space-between;
+}
+
+.linear_hide {
+    display: block;
+    position: inherit;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+    top: 12px;
 }
 
 .main_checkbox_label {
@@ -277,7 +309,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 9px;
+    flex: 1;
+}
+.main_oval_label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
     flex: 1;
 }
 .main_checkbox_label_input {
@@ -289,11 +328,25 @@ body {
     cursor: pointer;
 }
 
+.main_oval_label_input {
+    display: none;
+    cursor: pointer;
+}
+
 .main_checkbox_label_decor {
     display: none;
     background-image: url(Assets/checkbox.svg);
     width: 22px;
     height: 22px;
+    contain: content;
+    background-repeat: no-repeat;
+}
+
+.main_oval_label_decor {
+    display: none;
+    background-image: url(Assets/checkboxovalfront.svg);
+    width: 20px;
+    height: 20px;
     contain: content;
     background-repeat: no-repeat;
 }
@@ -308,34 +361,40 @@ body {
 }
 
 .main_empty {
+    background-image: url("Assets/checkboxback.svg");
     display: block;
     width: 22px;
     height: 22px;
-    background: #fff;
-    border: 1px solid #d3d4dd;
+    border-radius: 6px;
+}
+
+.main_oval_empty {
+    background-image: url("Assets/checkboxovalback.svg");
+    display: block;
+    width: 22px;
+    height: 22px;
     border-radius: 6px;
 }
 
 .main_checkbox_empty {
+    background-image: url("Assets/checkboxback.svg");
     display: block;
     width: 22px;
     height: 22px;
-    background: #fff;
-    border: 1px solid #d3d4dd;
     border-radius: 6px;
 }
 
 .main_checkbox_label_text {
-    height: 24px;
-    padding-bottom: 5px;
+    height: 0px;
+    padding-bottom: 0px;
     align-items: center;
     flex-grow: 1;
     font-family: 'SegoeUI-Regular', serif;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
     color: #000;
-    font-size: 16px;
+    font-size: 13px;
+    line-height: 0px;
 }
 
 .main_checkbox_button {
@@ -344,6 +403,33 @@ body {
     width: 20px;
     height: 20px;
 }
+
+.arrow_active {
+    animation: arrow 0.25s ease-out 1 normal forwards;
+}
+
+@keyframes arrow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+@keyframes underarrow {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.arrow_deactive {
+    animation: underarrow 0.25s ease-out 1 normal forwards;
+}
+
+
 .main_checkbox_label_input:checked ~ .main_checkbox_label_decor {
     display: block;
 }
@@ -364,13 +450,22 @@ body {
     display: none;
 }
 
+.main_oval_label_input:checked ~ .main_oval_label_decor {
+    display: block;
+}
+
+.main_oval_label_input:checked ~ .main_oval_empty {
+    display: none;
+}
+
+
 .main_products {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
     align-self: stretch;
-    border-top: 1px solid black;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 .main_product {
@@ -383,7 +478,7 @@ body {
 .main_product_inf {
     display: flex;
     width: 397px;
-    padding-top: 12px;
+    padding-top: 10px;
     align-items: flex-start;
     gap: 16px;
 }
@@ -392,6 +487,10 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.main_img_div {
+    height: 96px;
 }
 
 .main_img {
@@ -458,12 +557,53 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 16px;
+    position: relative;
+}
+.companyicon {
+    cursor: pointer;
+    position: relative;
+}
+
+.mypopup {
+    border-radius: 8px;
+    fill:  #FFF;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.30)) drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.15));
+    background: #FFF;
+    width: 280px;
+    height: 104px;
+    padding: 0px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: absolute;
+    justify-content: center;
+    display: none;
+}
+
+.mypopup h5 {
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    align-self: stretch;
+}
+
+.mypopup p{
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    align-self: stretch;
 }
 
 .main_product_sum {
     display: flex;
     width: 226px;
-    padding-top: 9px;
+    padding-top: 7px;
     align-items: flex-start;
     gap: 16px;
     align-self: stretch;
@@ -481,7 +621,7 @@ body {
 .amount_product {
     display: flex;
     width: 100px;
-    height: 44px;
+    height: 43px;
     border-radius: 8px;
     background:  #FFF;
     align-items: center;
@@ -497,7 +637,6 @@ body {
     align-items: center;
     background: transparent;
     font-family: 'SegoeUI-Regular', serif;
-    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
@@ -505,13 +644,26 @@ body {
 }
 
 .button_plus {
-    color: rgba(0, 0, 0, 0.20);
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
 }
 
 .button_minus {
-    color: #000;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.20);
+    cursor: pointer;
 }
-.amount_product span {
+
+.button_minus:disabled {
+    color: rgba(0, 0, 0, 0.20);
+}
+
+.button_plus:disabled {
+    color: rgba(0, 0, 0, 0.20);
+}
+
+.amount_product input {
     display: flex;
     width: 44px;
     height: 23px;
@@ -525,6 +677,13 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    cursor: pointer;
+}
+
+.amount_product input::-webkit-outer-spin-button,
+.amount_product input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .main_product_count p {
@@ -536,9 +695,18 @@ body {
     font-weight: 400;
     line-height: 16px;
 }
+.main_product_count_mobile p {
+    width: 100px;
+    color:  #FF3B30;
+    font-family: 'SegoeUI-Regular', serif;;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
 
 .like_delete_button {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     gap: 16px;
@@ -548,7 +716,25 @@ body {
 
 .like_delete_button  button {
     background: transparent;
+    cursor: pointer;
 }
+
+.main_product_mobile:hover .like_delete_button {
+    display: flex;
+}
+.main_product:hover .like_delete_button {
+    display: flex;
+}
+
+.icon-youtube svg:hover { stroke: #CB11AB; fill: #CB11AB; }
+.icon-youtube:hover { stroke: #CB11AB; fill: #CB11AB; }
+.icon-garbage svg:hover { stroke: #F55123; fill: #F55123; }
+.icon-garbage:hover { stroke: #F55123; fill: #F55123; }
+.search-close svg:hover { stroke: #ffffff; fill: #ffffff; }
+.search-close:hover { stroke: #ffffff; fill: #f3f3f3; }
+.search svg:hover { opacity:2; }
+.search:hover { opacity:2; }
+
 
 .main_product_price {
     display: flex;
@@ -557,6 +743,7 @@ body {
     gap: 5px;
     flex: 1 0 0;
     align-self: stretch;
+    position: relative;
 }
 
 
@@ -575,6 +762,7 @@ body {
     line-height: 28px; /* 140% */
     letter-spacing: -0.2px;
 }
+
 
 .price_after_com h4 {
     color: #000;
@@ -596,12 +784,48 @@ body {
     padding-bottom: 1px;
     border-bottom: 1px dashed;
     position: relative;
+    cursor: pointer;
 }
 
+
 .old_price img {
-    width: 100%;
+    left: -2%;
+    width: 104%;
     position: absolute;
-    top: 51%;
+    top: 54%;
+}
+
+.old_price_inf {
+    display: none;
+    padding: 11px 16px 13px 16px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 8px;
+    fill:  #FFF;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.30)) drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.15));
+    background: #FFF;
+    width: 239px;
+    height: 64px;
+    position: absolute;
+    top: 55px;
+    right: -10px;
+}
+
+.old_price_inf_data {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-self: stretch;
+    color:  #A0A0A4;
+    font-family: 'SegoeUI-Regular', serif;;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.old_price_inf_data:nth-child(2){
+    color:  #000;
 }
 
 .price_before_com {
@@ -624,10 +848,22 @@ body {
 }
 .main_missing_title {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 11px;
     align-self: stretch;
     justify-content: space-between;
+}
+
+#main_missing_title {
+    display: none;
+}
+#main_missing_title1 {
+    display: none;
+    align-items: center;
+}
+
+#main_checkbox_label1 {
+    display: flex;
 }
 
 .main_missing_title h3 {
@@ -636,7 +872,7 @@ body {
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 24px; /* 150% */
+    line-height: 16px; /* 150% */
 }
 
 
@@ -673,7 +909,31 @@ body {
     gap: 10px;
     align-self: stretch;
     cursor: pointer;
+    padding: 0;
 }
+
+.title-btn h3 {
+    flex: 1 0 0;
+    color:  #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+}
+.title-btn_sposob {
+    flex: 1 0 0;
+    color:  #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 140% */
+    letter-spacing: -0.2px;
+}
+
+
 
 .title-btn h2 {
     flex: 1 0 0;
@@ -717,7 +977,7 @@ body {
 .block_block_inf {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     align-items: flex-start;
     width: 100%;
 }
@@ -730,7 +990,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    min-width: 177px;
+    min-width: 185px;
 }
 
 .block_block_inf:nth-child(1){
@@ -763,6 +1023,10 @@ body {
     font-weight: 400;
     line-height: 16px;
     width: 177px;
+}
+
+.case_over_200_num {
+    display: none;
 }
 
 .ul_img {
@@ -804,6 +1068,17 @@ body {
     line-height: 18px;
 }
 
+#header_basket_icon_num2, #header_basket_icon_num2_2 {
+    color: #FFF;
+    font-family: 'SegoeUI-SemiBold', serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+
+
 .footer_delivery_block {
     display: flex;
     align-items: center;
@@ -812,14 +1087,6 @@ body {
     height: auto;
 }
 
-.footer_delivery_block p {
-    color: #000;
-    font-family: 'SegoeUI-Regular', serif;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 16px;
-}
 
 .free_delivery {
     color: #0CB477;
@@ -830,6 +1097,7 @@ body {
     line-height: 16px;
     border-bottom: 1px dashed rgba(12, 180, 119, 0.20);
     margin-left: -4px;
+    cursor: pointer;
 }
 
 .main_user_data_payment {
@@ -849,10 +1117,16 @@ body {
 
 .data_payment {
     display: flex;
-    gap: 8px;
+    gap: 10px;
+    align-items: center;
 }
 
 .data_payment  img{
+    display: flex;
+    width: 32px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
     background:  #F6F6FA;
 }
@@ -871,7 +1145,7 @@ body {
 }
 
 .main_user_data_recipient {
-    gap: 16px;
+    gap: 18px;
     align-items: flex-start;
 }
 
@@ -895,7 +1169,7 @@ body {
     height: 64px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2px;
+    gap: 3px;
     flex: 1 0 0;
 }
 
@@ -932,21 +1206,21 @@ body {
 }
 
 .name_sername  div .input_err , .mail_num_inn div .input_err {
-    color:  #000;
     font-family: 'SegoeUI-Regular', serif;
-    font-size: 13px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px;
+    line-height: 14px;
     align-self: stretch;
-    height: 16px;
+    height: 14px;
+    color: red;
 }
 
 
 .main_sidebar {
     max-width: 429px;
     min-width: 303px;
-    width: 28.4vw;
+    width: 31.4vw;
     position: relative;
     height: 100%;
 }
@@ -973,7 +1247,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 7px;
     align-self: stretch;
 }
 
@@ -996,8 +1270,17 @@ body {
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 32px;
-    letter-spacing: -0.24px;
+    line-height: 31px;
+}
+
+.main_sidebar_total_score_all h3 {
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 140% */
+    letter-spacing: -0.2px;
 }
 
 .com_big {
@@ -1098,28 +1381,69 @@ body {
 .delivery_free_button {
     color: #0CB477;
     border-bottom: 1px dashed rgba(12, 180, 119, 0.20);
-
+    cursor: pointer;
 }
 
+
+
 [data-tooltip] {
-    position: relative;
+
 }
 
 [data-tooltip]::after {
-    content: attr(data-tooltip); /* Выводим текст */
-    position: absolute; /* Абсолютное позиционирование */
-    width: 300px; /* Ширина подсказки */
-    left: 0; top: 0; /* Положение подсказки */
-    background: #3989c9; /* Синий цвет фона */
-    color: #fff; /* Цвет текста */
-    padding: 0.5em; /* Поля вокруг текста */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
-    pointer-events: none; /* Подсказка */
-    opacity: 0; /* Подсказка невидима */
-    transition: 1s; /* Время появления подсказки */
+    content: attr(data-tooltip);
+    position: absolute;
+    width: auto;
+    left: 8px;
+    right: 8px;
+    top: 289px;
+    background: #FFF;
+    padding: 10px 16px 14px 16px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s;
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
 }
 
 [data-tooltip]:hover::after {
+    opacity: 1;
+
+}
+
+[data-toolti] {
+position: relative;
+}
+
+[data-toolti]::after {
+    content: attr(data-toolti);
+    position: absolute;
+    width: auto;
+    width: 256px;
+    left: -116px;
+    top: 22px;
+    background: #FFF;
+    padding: 10px 16px 14px 16px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s;
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+[data-toolti]:hover::after {
     opacity: 1;
 
 }
@@ -1152,15 +1476,6 @@ body {
     align-self: stretch;
 }
 
-.main_sidebar_total_button_order {
-    display: flex;
-    height: 44px;
-    padding: 0px 32px 5px 32px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-}
 
 .main_sidebar_total_button_order {
     display: flex;
@@ -1172,6 +1487,10 @@ body {
     align-self: stretch;
     border-radius: 8px;
     background: #CB11AB;
+}
+
+.main_sidebar_total_button_order:hover {
+    background: #fd00d1;
 }
 
 .author_prava {
@@ -1186,14 +1505,22 @@ body {
 
 }
 
+.big_num {
+    display: flex;
+    width: 76px;
+    height: 28px;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .footer {
-    background-color: #481173;
+    background-color: #6725A8;
     width: 100%;
-    height: 64px;
+    height: 83px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 48px 24px 24px 24px;
+    padding: 43px 26px 24px 24px;
     position: relative;
 }
 
@@ -1203,7 +1530,7 @@ footer::before {
     background: #F6F6FA;
     border-radius: 0 0 24px 24px;
     width: 100%;
-    height: 43px;
+    height: 40px;
     position: absolute;
     top: -21px;
     left: 0;
@@ -1244,14 +1571,20 @@ footer::before {
 }
 
 .header_nav_p_mobile {
+    display: flex;
+    padding: 11px 4px 21px 4px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
     color:  #FFF;
     font-family: 'SegoeUI-SemiBold';
-    font-size: 26px;
+    font-size: 31px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 24px; /* 92.308% */
+    font-weight: 400;
+    line-height: 24px;
     font-variant: all-small-caps;
-    letter-spacing: 0.52px;
+    letter-spacing: 0.9px;
 }
 
 .header_input_button_mobile {
@@ -1260,12 +1593,310 @@ footer::before {
     cursor: pointer;
 }
 .header_nav_mobile {
-    gap: 16px;
-    width: 170px;
+    display: none;
     height: 56px;
     align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.main_mobile {
     display: none;
 }
+
+
+.modal_pay {
+    width: 400px;
+    height: 408px;
+}
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 3000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.20);
+    transition: 0.3s all;
+}
+
+.modal_delivery {
+    width: 500px;
+    height: initial;
+}
+
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 20;
+    transition: .3s all;
+}
+
+.modal.active,
+.overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal_pay_title {
+    display: flex;
+    padding: 16px 24px 13px 24px;
+    align-items: flex-start;
+    align-self: stretch;
+    justify-content: space-between;
+}
+.modal_pay_title h3 {
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+line-height: 28px; /* 140% */
+letter-spacing: -0.2px;
+}
+
+
+.modal_pay_title button {
+    display: flex;
+    padding-top: 4px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: stretch;
+    background: transparent;
+}
+
+.modal_pay_check {
+    display: flex;
+    padding: 0px 22px 123px 22px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.modal_delivery_check {
+    display: flex;
+    padding: 0px 22px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.modal_delivery_check_buttons {
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.modal_delivery_check_buttons div {
+    display: flex;
+    padding-bottom: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 20px;
+    border: 2px solid rgba(203, 17, 171, 0.15);
+    background: #FFF;
+    cursor: pointer;
+}
+
+.star_punkt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.modal_delivery_check_buttons div span{
+    color: #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.modal_delivery_check_info {
+    display: flex;
+    padding-bottom: 33px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+.modal_delivery_check_info p:nth-child(1) {
+    display: flex;
+    height: 18px;
+    padding: 2px 1px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    width: 100%;
+    color:  #000;
+    font-family: 'SegoeUI-Bold';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.modal_delivery_check_info_data {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+.modal_delivery_check_info_data_2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.modal_delivery_check_info_data span {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 4px 0px 8px 0px;
+    flex: 1 0 0;
+}
+
+.address_delivery span:nth-child(1) {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.star_punkt span:nth-child(1)  {
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+.star_punkt span:nth-child(2)  {
+    color: #A0A0A4;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.address_delivery {
+    display: flex;
+    padding: 4px 0px 8px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    flex: 1 0 0;
+}
+
+
+
+.modal_delivery_check_info_data button {
+    background: transparent;
+}
+.modal_delivery_check_info_data_2 button {
+    background: transparent;
+}
+
+
+
+.modal_pay_check_block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.modal_pay_check_block_img_span {
+    display: flex;
+    gap: 4px;
+}
+
+.modal_pay_check_block_img_span span{
+    color: #000;
+    font-family: 'SegoeUI-Regular', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    flex: 1 0 0;
+}
+
+.modal_pay_check_block_img_span  img{
+    display: flex;
+    width: 32px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background:  #F6F6FA;
+
+}
+
+.modal_choose_button {
+    display: flex;
+    padding: 16px 24px 24px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.modal_choose_button  button {
+    display: flex;
+    height: 44px;
+    padding: 0px 48px 5px 48px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background:  #CB11AB;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
+}
+.modal_choose_button  button:hover {
+    background: #fd00d1;
+}
+
+.modal_choose_button  button h4 {
+    color: #FFF;
+    font-family: 'SegoeUI-Bold';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+
 
 @font-face {
     font-family: 'Segoe-UI-400';
@@ -1314,36 +1945,31 @@ footer::before {
         width: 100%;
     }
 }
-@media (max-width: 380px)  {
+@media (max-width: 380px) {
 
     .container {
         display: inline-flex;
         max-width: 320px;
+        min-width: 220px;
+        width: auto;
         align-items: flex-start;
         position: relative;
-    }
-
-    .main {
-        padding: 25px 16px 24px 16px;
-        gap: 32px;
+        height: 100%;
     }
 
     .fixed_tab {
         display: block;
     }
 
-
     .header_nav_img2 {
         display: block;
     }
 
+
     .header {
-        display: flex;
         height: 56px;
         padding: 0px 13px;
-        align-items: center;
-        gap: 16px;
-        align-self: stretch;
+        flex-direction: column;
     }
 
     .header_nav_mobile {
@@ -1354,18 +1980,474 @@ footer::before {
         display: none;
     }
 
-
     .header .header_icons {
         display: none;
     }
+
 
     .header_input {
         display: none;
     }
 
 
+    .main {
+        display: none;
+        padding: 25px 16px 24px 16px;
+        gap: 32px;
+    }
+
+    .main_mobile {
+        display: flex;
+        width: 320px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        background-color: #F6F6FA;
+        border-radius: 24px;
+        padding: 16px 16px 45px 16px;
+    }
+
+    .main_container {
+        gap: 4px;
+        flex: 1 0 0;
+    }
+
+    .main_basket {
+        max-width: 296px;
+        min-width: 294px;
+        width: 100%;
+        gap: 48px;
+    }
+
+    .main_checkbox_button {
+        padding: 12px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .main_checkbox_all {
+        margin-bottom: -10px;
+    }
+
+    .main_products {
+        min-width: 288px;
+        gap: 16px;
+        margin-top: -10px;
+    }
+
+    .main_product_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        align-self: stretch;
+        border-top: 1px solid rgba(0, 0, 0, 0.10);
+    }
+
+    .main_product_inf {
+        width: 288px;
+        padding-top: 11px;
+
+    }
+
+    .main_img {
+        width: 80px;
+        height: 106px;
+    }
+
+    .main_img_div {
+        height: 106px;
+        z-index: 111;
+    }
+
+    .main_product_checkbox {
+        position: relative;
+    }
+
+    .main_label {
+        z-index: 1000;
+        position: absolute;
+        left: 4px;
+        top: 4px;
+    }
+
+    .size_on_img {
+        display: flex;
+        width: 22px;
+        height: 22px;
+        padding: 0px 4px 3px 4px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 4px;
+        bottom: 4px;
+        border-radius: 6px;
+        background: #FFF;
+        z-index: 1000;
+    }
+
+    .size_on_img span {
+        color: #000;
+        text-align: center;
+        font-family: 'SegoeUI-Regular', serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    .size_on_img_bottom {
+        display: flex;
+        width: 72px;
+        height: 22px;
+        padding: 0px 4px 3px 4px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 4px;
+        bottom: 4px;
+        border-radius: 6px;
+        background: #FFF;
+        z-index: 1000;
+    }
+
+    .size_on_img_bottom span {
+        color: #000;
+        text-align: center;
+        font-family: 'SegoeUI-Regular', serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    .price_after_com {
+        gap: 5px;
+        align-self: stretch;
+        width: max-content;
+    }
+
+    .qwe {
+        word-break: break-word;
+    }
+
+    .product_description {
+        gap: 3px;
+    }
+
+    .product_description_sklad_flex {
+        margin-top: 2px;
+    }
+
+    .product_description_sklad {
+        margin-top: 6px
+    }
+
+    .product_description_name {
+        font-size: 14px;
+        line-height: 20px; /* 142.857% */
+    }
+
+    .product_description_name span {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        width: 192px;
+    }
+
+    .like_delete_button {
+        gap: 24px;
+        margin-right: 18px;
+    }
+
+    .product_description_info {
+        margin-top: 4px;
+    }
+
+    .main_product_sum_mobile {
+        display: flex;
+        height: 32px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+    }
+
+    .main_product_count_mobile {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .like_delete_button_mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .like_delete_button_mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+
+    }
+
+    .amount_product {
+        width: 80px;
+        height: 32px;
+    }
+
+    .amount_product button {
+        width: 0px;
+        padding: 2px 7px 6px 4px;
+        cursor: pointer;
+    }
+
+    .main_product_sum {
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .main_basket_user_data {
+        width: 320px;
+        gap: 12px;
+        margin-left: -16px;
+        margin-top: -18px;
+    }
+
+    .main_delivery {
+        padding: 16px 0px 24px 0px;
+    }
+
+    .main_delivery_block {
+        gap: 8px;
+    }
+
+    .title-btn {
+        align-items: flex-end;
+    }
+
+    .title-btn h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: -0.2px;
+    }
+
+    .title-btn button {
+        padding-top: 3px;
+    }
+
+    .main_delivery_inf {
+        gap: 16px;
+    }
+
+    .block_inf {
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    .delivery_city {
+        width: 288px;
+        gap: 0;
+    }
+
+    .block_block_inf:nth-child(1) {
+        margin-bottom: 0px;
+    }
+
+    .block_block_inf_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .hide_block_inf {
+        display: none;
+    }
+
+
+
+    .block_inf_mobile {
+        align-items: flex-start;
+        flex-direction: column;
+        display: flex;
+        gap: 12px;
+    }
+
+    .footer_delivery_block {
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+    }
+
+    .free_delivery {
+        color: #0CB477;
+        font-family: 'SegoeUI-Regular', serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        border-bottom: 1px dashed rgba(12, 180, 119, 0.20);
+        margin-left: -4px;
+    }
+
+    .main_delivery {
+        padding: 16px 16px 24px 16px;
+    }
+
+    .main_user_data_recipient {
+        display: flex;
+        padding: 16px 16px 24px 16px;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+    }
+
+    .h3_data_recipient {
+        flex: 1 0 0;
+        color: #000;
+        font-family: 'SegoeUI-Bold';
+        ont-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px; /* 140% */
+        letter-spacing: -0.2px;
+    }
+
+    .main_user_data_recipient_inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+        width: 288px;
+    }
+
+    .name_sername, .mail_num_inn {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+
+    .name_sername div, .mail_num_inn div {
+        height: 56px;
+        gap: 11px;
+        align-self: stretch;
+        justify-content: center;
+        padding: 13px 0px 16px 0px;
+    }
+
+    .name_sername div label, .mail_num_inn div label {
+        line-height: 13px;
+        height: 13px;
+    }
+
+    .main_sidebar_mobile {
+        display: flex;
+        width: 320px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main_sidebar_total_mobile {
+        padding: 8px 16px 0px 16px;
+    }
+
+    .main_sidebar_container {
+        gap: 16px;
+    }
+
+
+    footer::before {
+        display: none;
+    }
+
+    .reverse_delivery {
+        background: #F0ECF4;
+    }
+
+    .payment_immediately {
+        background: #F0ECF4;
+        margin-bottom: 8px;
+    }
+
+
+    .footer {
+        padding: 24px;
+        height: 64px;
+    }
+
+    .main_basket_insale {
+        gap: 13px;
+    }
+
+    [data-tooltip]::after {
+        top: 2566px;
+        z-index: 11111;
+    }
+
+    .linear_hide {
+        top: 12px;
+    }
+
+    .main_empty {
+        display: block;
+        background: #fff;
+        border: 1px solid #d3d4dd;
+        border-radius: 6px;
+    }
+
+
+    .modal_pay_title h3 {
+        height: 32px;
+        font-family: 'SegoeUI-SemiBold';
+        font-weight: 600;
+    }
+
+    .modal_choose_button {
+        padding: 16px;
+    }
+
+    .modal_choose_button button {
+        width: 100%;
+    }
+
+    .modal_pay_check {
+        padding: 0px 16px;
+        flex: 1 0 0;
+        align-self: stretch;
+    }
+
+    .modal_pay_title {
+        padding: 16px 11px 13px 16px;
+    }
+
+    .modal {
+        width: 320px;
+        height: 594px;
+    }
+
+    .modal_delivery_check {
+        padding: 0px 16px;
+        flex: 1 0 0;
+        align-self: stretch;
+    }
+
+    .data_payment {
+        margin-top: -8px;
+    }
 
 }
+
+
+
 
 
 
